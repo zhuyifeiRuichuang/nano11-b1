@@ -1,18 +1,17 @@
 # **nano11 🔬**
 
-A PowerShell script to build a heavily trimmed-down Windows 11 image.
+A PowerShell script to build an even more heavily trimmed-down Windows 11 image.
 
 ## **Introduction**
 
-Welcome to nano11, the next step in creating ultra-lightweight Windows 11 builds. This project provides a flexible and powerful PowerShell solution for creating custom, minimal installation images.
+Introducing nano11 builder, a PowerShell script that creates an even smaller Windows 11 image!
 
-You can now use this script on **ANY Windows 11 release**, regardless of build, language, or architecture. This is made possible thanks to the improved scripting capabilities of PowerShell.
+The goal of nano11 is to automate the build of a streamlined Windows 11 image. The script uses only built-in DISM capabilities and the official oscdimg.exe (downloaded automatically) to create a bootable ISO with no external binaries. An included unattended answer file helps bypass the Microsoft Account requirement during setup and enables compact installation by default.
+It's open-source, so feel free to modify and adapt it to your needs\! Also, feedback is much appreciated!
 
-The goal of nano11 is to automate the build of a streamlined Windows 11 image. The script uses only built-in DISM capabilities and the official oscdimg.exe (downloaded automatically) to create a bootable ISO with no external binaries. An included unattended answer file helps bypass the Microsoft Account requirement during setup and enables compact installation by default. It's open-source, so feel free to modify and adapt it to your needs\!
+## **☢️ BEFORE YOU BEGIN:**
 
-## **☢️ Script Philosophy: The Core Builder**
-
-This repository contains a single, powerful script: nano11.ps1. This is an **extreme experimental script** designed for creating a quick and dirty development testbed. It removes everything possible to get the smallest footprint, including the Windows Component Store (WinSxS), core services, and much more.
+This is an **extreme experimental script** designed for creating a quick and dirty development testbed. It removes everything possible to get the smallest footprint, including the Windows Component Store (WinSxS), core services, and much more.
 
 The resulting OS is **not serviceable**. This means you cannot add languages, drivers, or features, and you will not receive Windows Updates. It is intended only for testing, development, or embedded use in VMs where a minimal, static environment is required.
 
@@ -49,17 +48,15 @@ The nano11.ps1 script is extremely aggressive. It removes:
 6. **Follow the prompts:** The script will ask for the drive letter of the mounted image and the edition (SKU) you want to base your image on.  
 7. **Sit back and relax\!** When completed, the new ISO will be in the same folder as the script.
 
-## **Known Issues & Troubleshooting**
+In the end you should get an image that is up to **3 times** as smaller as a standard Windows 11 image!
+## 🎬 Watch the Demo
 
-* **Stuck on Boot:** If your ISO hangs on the boot screen, a critical service or component was removed. The most likely culprits are the **Audio services** or the aggressive WinSxS trim. You may need to edit the script to be less aggressive for your specific hardware or Windows build.  
-* **Installer Errors:** An error like 'autorun.dll' could not be loaded means a critical setup file was removed. This can happen with the aggressive sources folder cleanup. Add the missing file to the $dependencies list in the boot.wim section and rebuild.  
-* **Remnants:** Although Edge is removed, some links may remain in the Settings app.  
-* **Post-install Apps:** Outlook and Dev Home might try to reinstall themselves over time. The script attempts to block this, but it's an ongoing battle.
+[![Here's how to use nano11 builder, including how you can get to an installation as small as 3GB!](https://img.youtube.com/vi/YIOesMc50Dw/maxresdefault.jpg)](https://www.youtube.com/watch?v=YIOesMc50Dw)
 
-## **Future Features**
+## ❤️ Support the Project
 
-* Improved language and architecture detection.  
-* More flexibility in what to keep and what to delete, possibly via a config file.  
-* A GUI to make the process even easier.
+If this project has helped you, please consider showing your support! A small donation helps me dedicate more time to projects like this.
+Thank you!
 
-And that's pretty much it for now\! Thanks for trying nano11 and let me know how you like it\!
+**[Patreon](http://patreon.com/ntdev) | [PayPal](http://paypal.me/ntdev2) | [Ko-fi](http://ko-fi.com/ntdev)**
+## And that's pretty much it for now\! Thanks for trying nano11 and let me know how you like it\!
