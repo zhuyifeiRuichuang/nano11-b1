@@ -53,6 +53,10 @@ In the end you should get an image that is up to **3 times** as smaller as a sta
 
 [![Here's how to use nano11 builder, including how you can get to an installation as small as 3GB!](https://img.youtube.com/vi/YIOesMc50Dw/maxresdefault.jpg)](https://www.youtube.com/watch?v=YIOesMc50Dw)
 
+## Pre-built image
+You can download a pre-built image (the one shown in the video!) from here: 
+[archive.org](https://archive.org/details/nano11_25h2) 
+
 ## ❤️ Support the Project
 
 If this project has helped you, please consider showing your support! A small donation helps me dedicate more time to projects like this.
